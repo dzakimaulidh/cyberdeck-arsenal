@@ -1,4 +1,3 @@
-// js/components.js
 
 class CyberdeckNavbar extends HTMLElement {
     connectedCallback() {
@@ -76,9 +75,7 @@ class CyberdeckFooter extends HTMLElement {
                         <a href="tools.html">Tools</a>
                         <a href="blueteam.html">Blue Team</a>
                         <a href="#changelog" onclick="showToast('Changelog coming soon!', 'info'); return false;">Changelog</a>
-                        <a href="mailto:dzakif073@gmail.com" onclick="window.open('https://mail.google.com/mail/?view=cm&fs=1&to=dzakif073@gmail.com');">
-    Contact
-</a>
+                        <a href="mailto:dzakif073@gmail.com" onclick="window.open('https://mail.google.com/mail/?view=cm&fs=1&to=dzakif073@gmail.com');">Contact</a>
                     </div>
 
                     <!-- BOTTOM -->

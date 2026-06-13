@@ -1,11 +1,8 @@
-// ============================================
-// CYBERDECK — WIKI.JS
-// Wiki page interactivity
-// ============================================
 
 
 
-// ============ SEARCH PLAYBOOKS ============
+
+// SEARCH PLAYBOOKS
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('wiki-search-input');
     if (searchInput) {
@@ -20,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateReadCount();
 });
 
-// ============ FILTER PLAYBOOKS ============
+// FILTER PLAYBOOKS
 let currentFilter = 'all';
 
 document.addEventListener('click', (e) => {
@@ -71,7 +68,7 @@ function filterPlaybooks(query, filter) {
     }
 }
 
-// ============ EXPAND/COLLAPSE ALL ============
+// EXPAND/COLLAPSE ALL
 function expandAllPlaybooks() {
     document.querySelectorAll('.playbook-item').forEach(item => {
         const content = item.querySelector('.playbook-content');
@@ -96,7 +93,7 @@ function collapseAllPlaybooks() {
     showToast('All playbooks collapsed', 'info');
 }
 
-// ============ MARK AS READ ============
+// MARK AS READ
 function markAsRead(event, btn) {
     event.stopPropagation();
     
@@ -155,7 +152,7 @@ function updateReadCount() {
     }
 }
 
-// ============ COPY CODE BLOCK ============
+// COPY CODE BLOCK
 function copyCodeBlock(btn) {
     const codeBlock = btn.closest('.code-block');
     const code = codeBlock.querySelector('code').textContent;
@@ -178,7 +175,7 @@ function copyCodeBlock(btn) {
     });
 }
 
-// ============ TOAST NOTIFICATION (Fallback) ============
+// TOAST NOTIFICATION (Fallback)
 function showToast(message, type = 'info') {
     if (typeof window.showToast === 'function') {
         window.showToast(message, type);

@@ -1,15 +1,13 @@
-// ============================================
-// CYBERDECK — MAIN.JS (FINAL CLEAN VERSION)
-// ============================================
 
-// ============ GLOBAL VARIABLES ============
+
+//  GLOBAL VARIABLES 
 let commandHistory = [];
 let historyIndex = -1;
 let termBody, termInput;
 let keySequence = [];
 let keySequenceTimeout;
 
-// ============ UTILITY FUNCTIONS ============
+//  UTILITY FUNCTIONS 
 function escapeHtml(text) {
     if (!text) return '';
     const div = document.createElement('div');
@@ -26,7 +24,7 @@ function isInputFocused() {
     );
 }
 
-// ============ PLAYBOOK TOGGLE ============
+//  PLAYBOOK TOGGLE 
 function togglePlaybook(header) {
     const content = header.nextElementSibling;
     const toggle = header.querySelector('.playbook-toggle');
@@ -41,7 +39,7 @@ function togglePlaybook(header) {
     }
 }
 
-// ============ TOAST NOTIFICATION ============
+//  TOAST NOTIFICATION 
 function showToast(message, type = 'info', duration = 3000) {
     const container = document.getElementById('toast-container');
     if (!container) return;
@@ -64,7 +62,7 @@ function showToast(message, type = 'info', duration = 3000) {
     }, duration);
 }
 
-// ============ COPY TO CLIPBOARD ============
+//  COPY TO CLIPBOARD 
 function copyOutput(elementId) {
     const element = document.getElementById(elementId);
     if (!element || !element.value) {
@@ -79,7 +77,7 @@ function copyOutput(elementId) {
     });
 }
 
-// ============ TERMINAL FUNCTIONS ============
+//  TERMINAL FUNCTIONS 
 function addTermLine(content, className = '') {
     if (!termBody) return;
     const line = document.createElement('div');
@@ -111,7 +109,7 @@ function autocompleteCommand() {
     }
 }
 
-// ============ TERMINAL COMMAND PROCESSOR ============
+//  TERMINAL COMMAND PROCESSOR 
 function processCommand(cmd) {
     cmd = cmd.trim();
     if (!cmd) return;
@@ -389,7 +387,7 @@ function processCommand(cmd) {
     }
 }
 
-// ============ MOBILE MENU ============
+//  MOBILE MENU 
 function toggleMobileMenu() {
     const navLinks = document.getElementById('nav-links');
     const menuBtn = document.querySelector('.mobile-menu-btn');
@@ -400,7 +398,7 @@ function toggleMobileMenu() {
     }
 }
 
-// ============ COMMAND PALETTE ============
+//  COMMAND PALETTE 
 const commandPaletteOverlay = document.getElementById('command-palette-overlay');
 const commandPaletteInput = document.getElementById('command-palette-input');
 const commandPaletteResults = document.getElementById('command-palette-results');
@@ -501,7 +499,7 @@ function executeCommand(index) {
     }
 }
 
-// ============ SHORTCUTS MODAL ============
+//  SHORTCUTS MODAL 
 const shortcutsModalOverlay = document.getElementById('shortcuts-modal-overlay');
 
 function openShortcutsModal() {
@@ -514,7 +512,7 @@ function closeShortcutsModal() {
     shortcutsModalOverlay.classList.remove('active');
 }
 
-// ============ INITIALIZATION ============
+//  INITIALIZATION 
 document.addEventListener('DOMContentLoaded', () => {
     // Get terminal elements
     termBody = document.getElementById('term-body');
@@ -623,7 +621,7 @@ document.addEventListener('change', (e) => {
     }
 });
 
-// ============ GLOBAL KEYBOARD SHORTCUTS ============
+//  GLOBAL KEYBOARD SHORTCUTS 
 document.addEventListener('keydown', (e) => {
     // Ctrl+K = Command Palette
     if (e.ctrlKey && e.key === 'k') {
@@ -677,9 +675,9 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// ============================================
+
 // FLOATING AI CHAT WIDGET - WITH HISTORY
-// ============================================
+
 let aiChatOpen = false;
 let aiChatHistory = JSON.parse(localStorage.getItem('cyberdeck_chat_history') || '[]');
 
@@ -780,7 +778,6 @@ function addChatMessage(content, type) {
     const messageData = { type, content, time, timestamp };
     aiChatHistory.push(messageData);
     
-    // Limit history to 100 messages (biar nggak kebesaran)
     if (aiChatHistory.length > 100) {
         aiChatHistory = aiChatHistory.slice(-100);
     }

@@ -1,8 +1,4 @@
-// ============================================
-// CYBERDECK — TOOLS ENGINE v2.1
-// 12 Tools · 100% Client-Side · Dark Mode
-// CLEAN VERSION - NO DUPLICATES
-// ============================================
+
 
 const TOOLS_DB = {
     'base64': {
@@ -764,9 +760,7 @@ const TOOLS_DB = {
 };
 
 
-// ============================================
 // HELPER FUNCTIONS (Single definition)
-// ============================================
 function bufferToHex(buffer) {
     return Array.from(new Uint8Array(buffer))
         .map(b => b.toString(16).padStart(2, '0'))
@@ -821,9 +815,7 @@ function md5(string) {
     return hex(md51(string));
 }
 
-// ============================================
 // ROUTER & RENDER LOGIC (Single definition)
-// ============================================
 document.addEventListener('DOMContentLoaded', () => {
     updateStats();
     renderSidebar();

@@ -1,8 +1,3 @@
-/* ============================================
-   CYBERDECK — PURE MONOSPACE DARK THEME
-   Clean & Final Version
-   ============================================ */
-
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 :root {
@@ -51,7 +46,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* ============ NAVIGATION ============ */
+/* NAVIGATION */
 nav {
     background: var(--canvas);
     border-bottom: 1px solid var(--hairline);
@@ -130,7 +125,7 @@ nav {
 }
 
 
-/* ============ LAYOUT ============ */
+/* LAYOUT */
 .container { max-width: 960px; margin: 0 auto; padding: 0 5%; }
 .container-wide { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
 
@@ -141,7 +136,7 @@ section {
 
 section:last-of-type { border-bottom: none; }
 
-/* ============ TYPOGRAPHY ============ */
+/* TYPOGRAPHY */
 .display-xl {
     font-family: var(--font-mono);
     font-size: 38px;
@@ -182,7 +177,7 @@ section:last-of-type { border-bottom: none; }
     margin-bottom: 8px;
 }
 
-/* ============ BUTTONS ============ */
+/* BUTTONS */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -222,7 +217,7 @@ section:last-of-type { border-bottom: none; }
 
 .btn-ghost:hover { color: var(--ink); }
 
-/* ============ HERO TUI ============ */
+/* HERO TUI */
 .hero-tui {
     background: var(--surface-dark);
     padding: 64px 32px;
@@ -290,7 +285,7 @@ section:last-of-type { border-bottom: none; }
     margin-right: 4px;
 }
 
-/* ============ TERMINAL ============ */
+/* TERMINAL */
 .interactive-terminal {
     background: var(--surface-dark);
     border: 1px solid var(--hairline-strong);
@@ -402,7 +397,7 @@ section:last-of-type { border-bottom: none; }
     caret-color: var(--accent);
 }
 
-/* ============ STATS BAR ============ */
+/* STATS BAR */
 .stats-bar {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -434,7 +429,7 @@ section:last-of-type { border-bottom: none; }
     letter-spacing: 1px;
 }
 
-/* ============ GRIDS ============ */
+/*  GRIDS  */
 .capabilities-grid,
 .hub-grid {
     display: grid;
@@ -491,7 +486,7 @@ section:last-of-type { border-bottom: none; }
     color: var(--mute);
 }
 
-/* ============ TOOL LIST ============ */
+/*  TOOL LIST  */
 .tool-list {
     margin-top: 32px;
     border: 1px solid var(--hairline);
@@ -516,7 +511,7 @@ section:last-of-type { border-bottom: none; }
 .tool-action { color: var(--accent); font-size: 14px; text-decoration: none; white-space: nowrap; }
 .tool-action:hover { color: var(--ink); }
 
-/* ============ TOOL ENGINE LAYOUT ============ */
+/*  TOOL ENGINE LAYOUT  */
 .tool-layout {
     display: grid;
     grid-template-columns: 280px 1fr;
@@ -573,7 +568,7 @@ section:last-of-type { border-bottom: none; }
 .tool-link .fav-icon:hover,
 .tool-link .fav-icon.active { opacity: 1; color: var(--warning); }
 
-/* ============ ACTION/DOC PANELS ============ */
+/*  ACTION/DOC PANELS  */
 .action-panel {
     background: var(--surface-soft);
     border: 1px solid var(--hairline);
@@ -631,7 +626,7 @@ section:last-of-type { border-bottom: none; }
     color: var(--accent);
 }
 
-/* ============ FORM ELEMENTS ============ */
+/*  FORM ELEMENTS  */
 .form-group { margin-bottom: 16px; }
 
 .form-label {
@@ -685,7 +680,7 @@ textarea { min-height: 100px; }
     accent-color: var(--accent);
 }
 
-/* ============ PLAYBOOK ============ */
+/*  PLAYBOOK  */
 .playbook-list { margin-top: 24px; }
 
 .playbook-item {
@@ -744,7 +739,7 @@ textarea { min-height: 100px; }
     color: var(--charcoal);
 }
 
-/* ============ BLUE TEAM ============ */
+/*  BLUE TEAM  */
 .ir-workflow {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -814,7 +809,7 @@ textarea { min-height: 100px; }
     color: var(--accent);
 }
 
-/* ============ FOOTER ============ */
+/*  FOOTER  */
 footer {
     border-top: 1px solid var(--hairline);
     padding: 32px 0;
@@ -851,7 +846,7 @@ footer {
     color: var(--mute);
 }
 
-/* ============ TOAST ============ */
+/*  TOAST  */
 .toast-container {
     position: fixed;
     bottom: 24px;
@@ -905,7 +900,7 @@ footer {
     to { transform: translateX(100%); opacity: 0; }
 }
 
-/* ============ COMMAND PALETTE ============ */
+/*  COMMAND PALETTE  */
 .command-palette-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -1015,7 +1010,7 @@ footer {
     font-size: 10px;
 }
 
-/* ============ SHORTCUTS MODAL ============ */
+/*  SHORTCUTS MODAL  */
 .shortcuts-modal-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -1114,7 +1109,7 @@ footer {
     border: 1px solid var(--hairline-strong);
 }
 
-/* ============ SHORTCUT HINTS ============ */
+/*  SHORTCUT HINTS  */
 .shortcut-hints {
     position: fixed;
     bottom: 24px;
@@ -1141,9 +1136,9 @@ footer {
     border: 1px solid var(--hairline);
 }
 
-/* ============================================
+/* 
    RESPONSIVE — SATU MEDIA QUERY CLEAN
-   ============================================ */
+    */
 
 @media (max-width: 850px) {
     :root { --spacing-section: 64px; }
@@ -1322,9 +1317,9 @@ footer {
     .mitre-grid { grid-template-columns: 1fr; }
 }
 
-/* ============================================
+/* 
    FIX: INDEX.HTML RESPONSIVE
-   ============================================ */
+    */
 
 /* ASCII Art Wrapper - biar bisa scroll horizontal di mobile */
 .tui-ascii-wrapper {
@@ -1443,9 +1438,9 @@ footer {
     }
 }
 
-/* ============================================
+/* 
    BLUE TEAM PAGE - ENHANCED
-   ============================================ */
+    */
 
 /* Copy Button */
 .copy-btn {
@@ -1911,9 +1906,9 @@ footer {
     }
 }
 
-/* ============================================
+/* 
    WIKI PAGE ENHANCEMENTS
-   ============================================ */
+    */
 
 /* Reading Progress Bar */
 .reading-progress {
@@ -2317,9 +2312,9 @@ footer {
     }
 }
 
-/* ============================================
+/* 
    TOOLS PAGE ENHANCEMENTS
-   ============================================ */
+    */
 
 /* Stats Bar */
 .tools-stats-bar {
@@ -2669,9 +2664,9 @@ footer {
 }
 
 
-/* ============================================
+/* 
    INDEX PAGE ENHANCEMENTS
-   ============================================ */
+    */
 
 /* How It Works Grid */
 .how-it-works-grid {
@@ -2898,9 +2893,9 @@ footer {
     }
 }
 
-/* ============================================
+/* 
 FLOATING AI CHAT WIDGET - LEFT BOTTOM
-============================================ */
+ */
 .ai-chat-widget {
     position: fixed;
     bottom: 24px;
@@ -3189,9 +3184,9 @@ FLOATING AI CHAT WIDGET - LEFT BOTTOM
     background: var(--ash);
 }
 
-/* ============================================
+/* 
 MOBILE RESPONSIVE - CHAT WIDGET
-============================================ */
+ */
 @media (max-width: 640px) {
     .ai-chat-widget {
         bottom: 16px;
@@ -3338,9 +3333,9 @@ MOBILE RESPONSIVE - CHAT WIDGET
 
 
 
-/* ============================================
+/* 
 FOOTER SOCIAL MEDIA - ENHANCED
-============================================ */
+ */
 .footer-social {
     margin-bottom: 32px;
     padding: 24px;
