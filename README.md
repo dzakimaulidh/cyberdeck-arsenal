@@ -28,6 +28,6 @@
 1. Clone repository:
 ```bash
 
-git clone https://github.com/whiteblackgotham/cyberdeck-arsenal.git
+git clone https://github.com/[dzakimaulidh](https://github.com/dzakimaulidh//cyberdeck-arsenal.git
 
 cd cyberdeck-arsenal
