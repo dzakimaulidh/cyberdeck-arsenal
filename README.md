@@ -12,7 +12,7 @@
 - [LinkedIn](https://www.linkedin.com/in/dzaki-maulid-hidayat-a05172220/)  
 - [GitHub](https://github.com/whiteblackgotham)
 
-## ✨ Features
+## Features
 
 - **13+ Security Tools** - Base64, JWT, Hash, Regex, Subnet Calculator, dll
 - **AI Assistant** - Powered by Rahasia Developer
@@ -23,7 +23,7 @@
 - **Keyboard Shortcuts** - `Ctrl+K` command palette, `?` shortcuts
 - **100% Client Side** - Data tidak pernah dikirim ke server
 
-## 🚀 Quick Start
+## Quick Start
 
 1. Clone repository:
 ```bash
