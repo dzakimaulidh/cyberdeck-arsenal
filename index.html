@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberDeck — Blue Team Arsenal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <script src="js/components.js" defer></script>
+</head>
+<body>
+    <cyberdeck-navbar></cyberdeck-navbar>
+
+    <main class="container">
+        <!-- HERO -->
+        <section style="padding-top: 64px;">
+            <div class="section-label">// BLUE TEAM EDITION · v2.4.1 · SESSION: cd-blue-0xf3a1</div>
+            <h1 class="display-xl">Security Tools for <span class="accent">Defenders</span>.</h1>
+            <p class="body-md" style="max-width: 640px; margin-top: 16px;">
+                CyberDeck adalah arsenal lengkap untuk Blue Team — dari recon, vulnerability scanning, log analysis, sampai threat hunting. Semua dalam satu platform, built for security professionals.
+            </p>
+
+            <!-- TUI MOCKUP dengan typing animation -->
+            <div class="hero-tui">
+                <div class="tui-ascii-wrapper">
+                    <pre class="tui-ascii-wordmark"> 
+░░░             ░░░             ░░░             ░░░             ░░░               ░░░             ░░░
+     ██$$$$$$\       ███  $$\        ███             ███$$$$$$$\     ███             █$$\            █
+   ███$$  __$$\    ███░   $$ |     ███░            ███░ $$  __$$\  ███░            ███$$ |         ███
+ ███░ $$ /  \__|$$\█░ $$\ $$$$$$$\██░$$$$$$\   $$$$$$\  $$ |  $$ |█$$$$$$\   $$$$$$$\ $$ |  $$\  ███░ 
+██░   $$ |      $$ |  $$ |$$  __$$\ $$  __$$\ $$  __$$\ $$ |  $$ |$$  __$$\ $$  _____|$$ | $$  |██░   
+░     $$ |      $$ |  $$ |$$ |  $$ |$$$$$$$$ |$$ |  \__|$$ |  $$ |$$$$$$$$ |$$ /      $$$$$$  /█░     
+      $$ |  $$\ $$ |  $$ |$$ |  $$ |$$   ____|$$ |      $$ |  $$ |$$   ____|$$ |      $$  _$$<░       
+      \$$$$$$  |\$$$$$$$ |$$$$$$$  |\$$$$$$$\ $$ |      $$$$$$$  |\$$$$$$$\ \$$$$$$$\ $$ |█\$$\       
+       \______/  \____$$ |\_______/  \_______|\__|      \_______/  \_______| \_______|\__|░ \__|      
+ ███            $$\   $$ |       ███             ███             ███             ███             ███  
+██░            █\$$$$$$  |     ███░            ███░            ███░            ███░            ███░   
+░            ███░\______/    ███░            ███░            ███░            ███░            ███░     
+           ███░            ███░            ███░            ███░            ███░            ███░       
+                    </pre>
+                </div>
+                <div class="tui-prompt-row">
+                    ❯ <span class="token">scan</span> --target 192.168.1.0/24 --mode stealth <span class="model">claude-sonnet · blueteam</span>
+                </div>
+                <div class="tui-output" id="hero-output"></div>
+                <div class="tui-keybindings">
+                    <span><kbd>tab</kbd> switch panel</span>
+                    <span><kbd>ctrl+p</kbd> commands</span>
+                    <span><kbd>ctrl+r</kbd> run scan</span>
+                    <span><kbd>ctrl+e</kbd> export</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS (SINKRON DENGAN JUMLAH TOOLS ASLI) -->
+        <section style="padding: 0;">
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Active Tools</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">6</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Client-Side</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS (BARU!) -->
+        <section>
+            <div class="section-label">// HOW IT WORKS</div>
+            <h2 class="heading-md">Zero-Install. Zero-Config. Just Works.</h2>
+            <p class="body-md" style="margin-bottom: 24px;">Tiga langkah sederhana untuk mulai menggunakan CyberDeck.</p>
+
+            <div class="how-it-works-grid">
+                <div class="how-step">
+                    <div class="how-step-number">01</div>
+                    <div class="how-step-icon"><i class="fa-solid fa-mouse-pointer"></i></div>
+                    <div class="how-step-title">Choose a Tool</div>
+                    <div class="how-step-desc">Pilih dari 12 tools di 6 kategori berbeda. Atau tekan <kbd>Ctrl+K</kbd> untuk command palette.</div>
+                </div>
+                <div class="how-step">
+                    <div class="how-step-number">02</div>
+                    <div class="how-step-icon"><i class="fa-solid fa-keyboard"></i></div>
+                    <div class="how-step-title">Input Your Data</div>
+                    <div class="how-step-desc">Masukkan data yang ingin diproses. Semua diproses lokal di browser kamu.</div>
+                </div>
+                <div class="how-step">
+                    <div class="how-step-number">03</div>
+                    <div class="how-step-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="how-step-title">Get Instant Result</div>
+                    <div class="how-step-desc">Hasil muncul instan. Copy, download, atau langsung pakai. Zero server logging.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED TOOLS (BARU! - LINK KE TOOLS YANG BENERAN ADA) -->
+        <section>
+            <div class="section-label">// FEATURED TOOLS</div>
+            <h2 class="heading-md">Most Popular Tools</h2>
+            <p class="body-md" style="margin-bottom: 24px;">Tools yang paling sering dipakai oleh security professionals.</p>
+
+            <div class="featured-tools-grid">
+                <a href="tools.html?id=hash" class="featured-tool-card">
+                    <div class="featured-tool-icon"><i class="fa-solid fa-hashtag"></i></div>
+                    <div class="featured-tool-info">
+                        <div class="featured-tool-name">Hash Generator</div>
+                        <div class="featured-tool-desc">SHA-256, SHA-1, MD5 hashing</div>
+                    </div>
+                    <div class="featured-tool-badge">POPULAR</div>
+                </a>
+                <a href="tools.html?id=password" class="featured-tool-card">
+                    <div class="featured-tool-icon"><i class="fa-solid fa-key"></i></div>
+                    <div class="featured-tool-info">
+                        <div class="featured-tool-name">Password Generator</div>
+                        <div class="featured-tool-desc">Cryptographically secure passwords</div>
+                    </div>
+                    <div class="featured-tool-badge">POPULAR</div>
+                </a>
+                <a href="tools.html?id=jwt" class="featured-tool-card">
+                    <div class="featured-tool-icon"><i class="fa-solid fa-ticket"></i></div>
+                    <div class="featured-tool-info">
+                        <div class="featured-tool-name">JWT Decoder</div>
+                        <div class="featured-tool-desc">Decode & inspect JSON Web Tokens</div>
+                    </div>
+                    <div class="featured-tool-badge">NEW</div>
+                </a>
+                <a href="tools.html?id=regex" class="featured-tool-card">
+                    <div class="featured-tool-icon"><i class="fa-solid fa-asterisk"></i></div>
+                    <div class="featured-tool-info">
+                        <div class="featured-tool-name">Regex Tester</div>
+                        <div class="featured-tool-desc">Test regex patterns real-time</div>
+                    </div>
+                    <div class="featured-tool-badge">POPULAR</div>
+                </a>
+                <a href="tools.html?id=json" class="featured-tool-card">
+                    <div class="featured-tool-icon"><i class="fa-solid fa-code"></i></div>
+                    <div class="featured-tool-info">
+                        <div class="featured-tool-name">JSON Formatter</div>
+                        <div class="featured-tool-desc">Beautify, minify, validate JSON</div>
+                    </div>
+                    <div class="featured-tool-badge">POPULAR</div>
+                </a>
+                <a href="tools.html?id=subnet" class="featured-tool-card">
+                    <div class="featured-tool-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <div class="featured-tool-info">
+                        <div class="featured-tool-name">Subnet Calculator</div>
+                        <div class="featured-tool-desc">CIDR, netmask, host range</div>
+                    </div>
+                    <div class="featured-tool-badge">NEW</div>
+                </a>
+            </div>
+
+            <div style="text-align: center; margin-top: 24px;">
+                <a href="tools.html" class="btn btn-secondary">↗ View All 12 Tools</a>
+            </div>
+        </section>
+
+        <!-- CORE CAPABILITIES -->
+        <section>
+            <div class="section-label">// CORE CAPABILITIES</div>
+            <h2 class="heading-md">Everything a Blue Team Needs</h2>
+            <p class="body-md" style="margin-bottom: 8px;">Dibangun dari ground-up untuk defender — bukan port dari tool offensive yang dipaksain jadi defensive.</p>
+
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="capability-tag">[1] RECON</div>
+                    <div class="capability-title">Network Reconnaissance</div>
+                    <div class="capability-desc">Subdomain enum, port scanning, service fingerprinting, dan asset discovery — semua dalam satu command chain.</div>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-tag">[2] VULN</div>
+                    <div class="capability-title">Vulnerability Assessment</div>
+                    <div class="capability-desc">Real-time CVE matching, CVSS scoring, dan remediation guidance. Database sync tiap 6 jam dari NVD.</div>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-tag">[3] HUNT</div>
+                    <div class="capability-title">Threat Hunting</div>
+                    <div class="capability-desc">Query log terstruktur dengan SIGMA rules built-in. Deteksi lateral movement, persistence, dan C2 callbacks.</div>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-tag">[4] INTEL</div>
+                    <div class="capability-title">Threat Intelligence</div>
+                    <div class="capability-desc">IOC enrichment via VirusTotal, Shodan, AbuseIPDB. Otomatis korelasi dari MITRE ATT&CK framework.</div>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-tag">[5] RESP</div>
+                    <div class="capability-title">Incident Response</div>
+                    <div class="capability-desc">Playbook otomatis, timeline builder, dan evidence collector. IR workflow dari deteksi sampai remediation.</div>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-tag">[6] REPORT</div>
+                    <div class="capability-title">Automated Reporting</div>
+                    <div class="capability-desc">Generate laporan executive dan teknikal dalam sekali klik. Template NIST, ISO 27001, dan custom.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECURITY FEATURES (BARU!) -->
+        <section>
+            <div class="section-label">// SECURITY FIRST</div>
+            <h2 class="heading-md">Your Data Never Leaves Your Browser</h2>
+            <p class="body-md" style="margin-bottom: 24px;">CyberDeck dibangun dengan privasi sebagai prioritas utama.</p>
+
+            <div class="security-features-grid">
+                <div class="security-feature">
+                    <div class="security-feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="security-feature-title">100% Client-Side</div>
+                    <div class="security-feature-desc">Semua processing dilakukan di browser kamu. Tidak ada data yang dikirim ke server manapun.</div>
+                </div>
+                <div class="security-feature">
+                    <div class="security-feature-icon"><i class="fa-solid fa-eye-slash"></i></div>
+                    <div class="security-feature-title">Zero Logging</div>
+                    <div class="security-feature-desc">Kami tidak mencatat apapun. Tidak ada analytics, tidak ada tracking, tidak ada cookies.</div>
+                </div>
+                <div class="security-feature">
+                    <div class="security-feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="security-feature-title">Instant Load</div>
+                    <div class="security-feature-desc">Static site, no build step. Load dalam milidetik, bahkan di koneksi lambat.</div>
+                </div>
+                <div class="security-feature">
+                    <div class="security-feature-icon"><i class="fa-solid fa-lock"></i></div>
+                    <div class="security-feature-title">Open Source</div>
+                    <div class="security-feature-desc">Kode sumber terbuka. Audit sendiri, fork, atau contribute. Transparansi penuh.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE TERMINAL -->
+        <section>
+            <div class="section-label">// LIVE TERMINAL</div>
+            <h2 class="heading-md">Try It Now</h2>
+            <p class="body-md">Ketik <code style="background: var(--surface-dark-elevated); padding: 2px 6px; border-radius: 3px; color: var(--accent);">help</code> untuk melihat command yang tersedia.</p>
+
+            <div class="interactive-terminal">
+                <div class="term-header">
+                    <div class="term-dot red"></div>
+                    <div class="term-dot yellow"></div>
+                    <div class="term-dot green"></div>
+                    <span class="term-title">ops@cyberdeck:~</span>
+                </div>
+                <div class="term-body" id="term-body">
+                    <div class="term-line"><span class="info">CyberDeck Terminal v2.4.1</span></div>
+                    <div class="term-line"><span class="info">Type 'help' for available commands.</span></div>
+                    <div class="term-line">&nbsp;</div>
+                </div>
+                <div class="term-input-line">
+                    <span class="prompt">❯</span>
+                    <input type="text" class="term-input" id="term-input" placeholder="type a command..." autocomplete="off">
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA (DENGAN LINK BLUETEAM) -->
+        <section style="text-align: center;">
+            <h2 class="heading-md">Ready to defend your perimeter?</h2>
+            <p class="body-md" style="margin: 16px 0 24px;">Join 12,000+ security professionals yang sudah pakai CyberDeck di operasi nyata.</p>
+            <div class="cta-buttons">
+                <a href="tools.html" class="btn btn-primary">▶ START FREE TRIAL</a>
+                <a href="wiki.html" class="btn btn-secondary">↗ VIEW DOCUMENTATION</a>
+                <a href="blueteam.html" class="btn btn-secondary">BLUE TEAM OPS</a>
+            </div>
+        </section>
+    </main>
+
+    <cyberdeck-footer></cyberdeck-footer>
+
+    <!-- MODALS (tetap sama) -->
+    <div class="toast-container" id="toast-container"></div>
+    <div class="command-palette-overlay" id="command-palette-overlay">
+        <div class="command-palette">
+            <input type="text" class="command-palette-input" id="command-palette-input" placeholder="❯ Type a command or search..." autocomplete="off">
+            <div class="command-palette-results" id="command-palette-results"></div>
+            <div class="command-palette-footer">
+                <span><kbd>↑↓</kbd> navigate</span>
+                <span><kbd>↵</kbd> select</span>
+                <span><kbd>esc</kbd> close</span>
+            </div>
+        </div>
+    </div>
+    <div class="shortcuts-modal-overlay" id="shortcuts-modal-overlay">
+        <div class="shortcuts-modal">
+            <div class="shortcuts-modal-header">
+                <div class="shortcuts-modal-title">[?] Keyboard Shortcuts</div>
+                <button class="shortcuts-modal-close" onclick="closeShortcutsModal()">[x] CLOSE</button>
+            </div>
+            <div class="shortcuts-modal-content">
+                <div class="shortcut-group">
+                    <div class="shortcut-group-title">Navigation</div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Open Command Palette</span>
+                        <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>K</kbd></div>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Show Shortcuts</span>
+                        <div class="shortcut-keys"><kbd>?</kbd></div>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Go to Home</span>
+                        <div class="shortcut-keys"><kbd>g</kbd><kbd>h</kbd></div>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Go to Tools</span>
+                        <div class="shortcut-keys"><kbd>g</kbd><kbd>t</kbd></div>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Go to Wiki</span>
+                        <div class="shortcut-keys"><kbd>g</kbd><kbd>w</kbd></div>
+                    </div>
+                </div>
+                <div class="shortcut-group">
+                    <div class="shortcut-group-title">Tools</div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Focus Terminal</span>
+                        <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>/</kbd></div>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Clear Terminal</span>
+                        <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>L</kbd></div>
+                    </div>
+                </div>
+                <div class="shortcut-group">
+                    <div class="shortcut-group-title">General</div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Close Modal</span>
+                        <div class="shortcut-keys"><kbd>Esc</kbd></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shortcut-hints">
+        <span><kbd>Ctrl+K</kbd> Commands</span>
+        <span><kbd>?</kbd> Shortcuts</span>
+        <span><kbd>Ctrl+/</kbd> Terminal</span>
+    </div>
+
+
+<!-- Floating AI Chat Widget -->
+<div id="ai-chat-widget" class="ai-chat-widget">
+    <button class="ai-chat-button" onclick="toggleAIChat()">
+        <i class="fa-solid fa-robot"></i>
+        <span class="ai-chat-badge">AI</span>
+    </button>
+    
+    <div class="ai-chat-window" id="ai-chat-window">
+        <div class="ai-chat-header">
+            <div class="ai-chat-header-title">
+                <i class="fa-solid fa-robot"></i>
+                <span>CyberDeck AI</span>
+            </div>
+            <div style="display: flex; gap: 8px;">
+                <button class="ai-chat-action-btn" onclick="exportChatHistory()" title="Export Chat">
+                    <i class="fa-solid fa-download"></i>
+                </button>
+                <button class="ai-chat-action-btn" onclick="clearChatHistory()" title="Clear History">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+                <button class="ai-chat-close" onclick="toggleAIChat()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="ai-chat-messages" id="ai-chat-messages">
+            <div class="ai-chat-message ai-message-system">
+                <div class="ai-message-content">
+                    Halo! Saya AI Assistant CyberDeck<br><br>
+                    Chat history otomatis tersimpan di browser kamu.<br>
+                    Klik tombol "Clear History" di atas untuk menghapus.
+                </div>
+            </div>
+        </div>
+        
+        <div class="ai-chat-input-area">
+            <input 
+                type="text" 
+                id="ai-chat-input" 
+                class="ai-chat-input" 
+                placeholder="Ketik pertanyaan..." 
+                onkeypress="handleChatKeypress(event)"
+            >
+            <button class="ai-chat-send" onclick="sendAIChat()">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // TUI Typing Animation
+        const tuiOutput = document.getElementById('hero-output');
+        const tuiLines = [
+            { text: '[✓] Target acquired — 254 hosts in scope', class: 'success' },
+            { text: '[~] Running stealth port scan... SYN packets dispatched', class: '' },
+            { text: '[✓] 12 live hosts discovered — 187ms average RTT', class: 'success' },
+            { text: '[!] Anomaly detected on 192.168.1.47 — port 4444 OPEN', class: 'warning' },
+            { text: '[✗] CVE-2026-0911 match — SMB exploit possible — PRIORITY: HIGH', class: 'danger' },
+            { text: '[✓] Report saved → /ops/reports/scan_20260603_142201.json', class: 'success tui-path' }
+        ];
+
+        let lineIndex = 0;
+        function addTuiLine() {
+            if (lineIndex >= tuiLines.length) return;
+            const line = tuiLines[lineIndex];
+            const div = document.createElement('div');
+            div.className = line.class;
+            div.textContent = line.text;
+            tuiOutput.appendChild(div);
+            lineIndex++;
+            setTimeout(addTuiLine, 600);
+        }
+        
+        // Start animation when TUI is visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(addTuiLine, 500);
+                    observer.disconnect();
+                }
+            });
+        });
+        observer.observe(tuiOutput);
+        if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(reg => console.log('SW registered'))
+    .catch(err => console.log('SW failed', err));
+}
+
+
+
+    </script>
+
+    
+</body>
+</html>

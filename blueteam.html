@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Team Operations | CyberDeck</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <script src="js/components.js" defer></script>
+</head>
+<body>
+    <cyberdeck-navbar></cyberdeck-navbar>
+
+    <main class="container">
+        <!-- HERO -->
+        <section style="padding-top: 64px;">
+            <div class="section-label">// BLUE TEAM OPERATIONS · ARMED</div>
+            <h1 class="display-xl">Built for <span class="accent">Defenders</span>.</h1>
+            <p class="body-md" style="margin-top: 16px; max-width: 640px;">
+                Platform khusus untuk SOC analyst, incident responder, dan threat hunter. Dari deteksi sampai remediation — semua dalam satu workflow terintegrasi.
+            </p>
+
+            <!-- STATS -->
+            <div class="stats-bar" style="margin-top: 48px;">
+                <div class="stat-item">
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Monitoring</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">&lt;5m</div>
+                    <div class="stat-label">MTTD Average</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">MITRE Coverage</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIVE SOC DASHBOARD -->
+        <section>
+            <div class="section-label">// LIVE OPERATIONS</div>
+            <h2 class="heading-md">SOC Dashboard (Simulation)</h2>
+            <p class="body-md">Real-time monitoring dashboard. Data ini adalah simulasi untuk demo.</p>
+
+            <div class="soc-dashboard">
+                <div class="soc-dashboard-header">
+                    <div class="soc-dashboard-title">◉ CYBERDECK SOC · LIVE</div>
+                    <div class="soc-dashboard-status">OPERATIONAL</div>
+                </div>
+
+                <div class="soc-metrics">
+                    <div class="soc-metric">
+                        <div class="soc-metric-label">Events / sec</div>
+                        <div class="soc-metric-value">2,847</div>
+                        <div class="soc-metric-trend up">↑ 12% vs yesterday</div>
+                    </div>
+                    <div class="soc-metric">
+                        <div class="soc-metric-label">Active Alerts</div>
+                        <div class="soc-metric-value">23</div>
+                        <div class="soc-metric-trend down">↓ 8% vs yesterday</div>
+                    </div>
+                    <div class="soc-metric">
+                        <div class="soc-metric-label">MTTD</div>
+                        <div class="soc-metric-value">4.2m</div>
+                        <div class="soc-metric-trend down">↓ 15% vs target</div>
+                    </div>
+                    <div class="soc-metric">
+                        <div class="soc-metric-label">MTTR</div>
+                        <div class="soc-metric-value">28m</div>
+                        <div class="soc-metric-trend down">↓ 22% vs target</div>
+                    </div>
+                </div>
+
+                <div class="soc-alerts">
+                    <div class="soc-alerts-title">Recent Alerts</div>
+                    <div class="soc-alert">
+                        <span class="soc-alert-name"><span style="color: var(--danger);">[CRITICAL]</span> Mimikatz detected on WS-FINANCE-04</span>
+                        <span class="soc-alert-time">2 min ago</span>
+                    </div>
+                    <div class="soc-alert">
+                        <span class="soc-alert-name"><span style="color: var(--warning);">[HIGH]</span> Brute force attempt from 185.220.101.47</span>
+                        <span class="soc-alert-time">8 min ago</span>
+                    </div>
+                    <div class="soc-alert">
+                        <span class="soc-alert-name"><span style="color: var(--warning);">[HIGH]</span> Suspicious PowerShell execution on SRV-DB-01</span>
+                        <span class="soc-alert-time">15 min ago</span>
+                    </div>
+                    <div class="soc-alert">
+                        <span class="soc-alert-name"><span style="color: var(--accent);">[MEDIUM]</span> DNS tunneling pattern detected</span>
+                        <span class="soc-alert-time">32 min ago</span>
+                    </div>
+                    <div class="soc-alert">
+                        <span class="soc-alert-name"><span style="color: var(--accent);">[MEDIUM]</span> Unusual outbound traffic to 91.215.85.22</span>
+                        <span class="soc-alert-time">1 hour ago</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IR WORKFLOW -->
+        <section>
+            <div class="section-label">// INCIDENT RESPONSE</div>
+            <h2 class="heading-md">IR Workflow: Detection to Remediation</h2>
+            <p class="body-md">6 fase standar yang diotomasi oleh CyberDeck. Klik pada tool untuk langsung membuka.</p>
+
+            <div class="ir-workflow">
+                <div class="ir-step">
+                    <div class="ir-step-num">PHASE 01</div>
+                    <div class="ir-step-title">Preparation</div>
+                    <div class="ir-step-desc">Setup baseline, configure SIEM rules, train team.</div>
+                    <div class="ir-step-tools">
+                        <a href="tools.html?id=json">JSON Formatter</a>
+                        <a href="tools.html?id=regex">Regex Tester</a>
+                    </div>
+                </div>
+                <div class="ir-step">
+                    <div class="ir-step-num">PHASE 02</div>
+                    <div class="ir-step-title">Identification</div>
+                    <div class="ir-step-desc">Deteksi anomali via log correlation dan threat intel.</div>
+                    <div class="ir-step-tools">
+                        <a href="tools.html?id=regex">Regex Tester</a>
+                        <a href="tools.html?id=timestamp">Timestamp</a>
+                    </div>
+                </div>
+                <div class="ir-step">
+                    <div class="ir-step-num">PHASE 03</div>
+                    <div class="ir-step-title">Containment</div>
+                    <div class="ir-step-desc">Isolasi sistem terinfeksi, block IOC di firewall.</div>
+                    <div class="ir-step-tools">
+                        <a href="tools.html?id=hex">Hex Encoder</a>
+                        <a href="tools.html?id=hash">Hash Generator</a>
+                    </div>
+                </div>
+                <div class="ir-step">
+                    <div class="ir-step-num">PHASE 04</div>
+                    <div class="ir-step-title">Eradication</div>
+                    <div class="ir-step-desc">Hapus malware, patch vulnerability, reset credential.</div>
+                    <div class="ir-step-tools">
+                        <a href="tools.html?id=hash">Hash Generator</a>
+                        <a href="tools.html?id=password">Password Gen</a>
+                    </div>
+                </div>
+                <div class="ir-step">
+                    <div class="ir-step-num">PHASE 05</div>
+                    <div class="ir-step-title">Recovery</div>
+                    <div class="ir-step-desc">Restore system dari backup bersih, monitor ketat.</div>
+                    <div class="ir-step-tools">
+                        <a href="tools.html?id=base64">Base64</a>
+                        <a href="tools.html?id=url">URL Encoder</a>
+                    </div>
+                </div>
+                <div class="ir-step">
+                    <div class="ir-step-num">PHASE 06</div>
+                    <div class="ir-step-title">Lessons Learned</div>
+                    <div class="ir-step-desc">Post-incident report, update playbook, share intel.</div>
+                    <div class="ir-step-tools">
+                        <a href="tools.html?id=json">JSON Formatter</a>
+                        <a href="wiki.html">View Playbooks</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MITRE ATT&CK -->
+        <section>
+            <div class="section-label">// MITRE ATT&CK MAPPING</div>
+            <h2 class="heading-md">Tactic Coverage Matrix</h2>
+            <p class="body-md">CyberDeck mencakup seluruh 14 tactic dalam MITRE ATT&CK framework. Klik untuk expand teknik.</p>
+
+            <div class="mitre-grid">
+                <div class="mitre-tactic" onclick="this.classList.toggle('expanded')">
+                    <div class="mitre-tactic-name">Reconnaissance</div>
+                    <div class="mitre-tactic-id">TA0043</div>
+                    <ul class="mitre-tactic-techniques">
+                        <li>Active Scanning</li>
+                        <li>Gather Victim Info</li>
+                        <li>Search Open Websites</li>
+                    </ul>
+                </div>
+                <div class="mitre-tactic" onclick="this.classList.toggle('expanded')">
+                    <div class="mitre-tactic-name">Initial Access</div>
+                    <div class="mitre-tactic-id">TA0001</div>
+                    <ul class="mitre-tactic-techniques">
+                        <li>Phishing</li>
+                        <li>Exploit Public-Facing App</li>
+                        <li>Valid Accounts</li>
+                    </ul>
+                </div>
+                <div class="mitre-tactic" onclick="this.classList.toggle('expanded')">
+                    <div class="mitre-tactic-name">Execution</div>
+                    <div class="mitre-tactic-id">TA0002</div>
+                    <ul class="mitre-tactic-techniques">
+                        <li>Command & Scripting</li>
+                        <li>User Execution</li>
+                        <li>Scheduled Task</li>
+                    </ul>
+                </div>
+                <div class="mitre-tactic" onclick="this.classList.toggle('expanded')">
+                    <div class="mitre-tactic-name">Persistence</div>
+                    <div class="mitre-tactic-id">TA0003</div>
+                    <ul class="mitre-tactic-techniques">
+                        <li>Registry Run Keys</li>
+                        <li>Scheduled Task</li>
+                        <li>Web Shell</li>
+                    </ul>
+                </div>
+                <div class="mitre-tactic" onclick="this.classList.toggle('expanded')">
+                    <div class="mitre-tactic-name">Privilege Escalation</div>
+                    <div class="mitre-tactic-id">TA0004</div>
+                    <ul class="mitre-tactic-techniques">
+                        <li>Abuse Elevation Control</li>
+                        <li>Boot or Logon Autostart</li>
+                    </ul>
+                </div>
+                <div class="mitre-tactic" onclick="this.classList.toggle('expanded')">
+                    <div class="mitre-tactic-name">Defense Evasion</div>
+                    <div class="mitre-tactic-id">TA0005</div>
+                    <ul class="mitre-tactic-techniques">
+                        <li>Impair Defenses</li>
+                        <li>Indicator Removal</li>
+                        <li>Obfuscated Files</li>
+                    </ul>
+                </div>
+                <div class="mitre-tactic" onclick="this.classList.toggle('expanded')">
+                    <div class="mitre-tactic-name">Credential Access</div>
+                    <div class="mitre-tactic-id">TA0006</div>
+                    <ul class="mitre-tactic-techniques">
+                        <li>OS Credential Dumping</li>
+                        <li>Brute Force</li>
+                        <li>Input Capture</li>
+                    </ul>
+                </div>
+                <div class="mitre-tactic" onclick="this.classList.toggle('expanded')">
+                    <div class="mitre-tactic-name">Discovery</div>
+                    <div class="mitre-tactic-id">TA0007</div>
+                    <ul class="mitre-tactic-techniques">
+                        <li>Account Discovery</li>
+                        <li>System Network Config</li>
+                        <li>File & Directory Discovery</li>
+                    </ul>
+                </div>
+                <div class="mitre-tactic" onclick="this.classList.toggle('expanded')">
+                    <div class="mitre-tactic-name">Lateral Movement</div>
+                    <div class="mitre-tactic-id">TA0008</div>
+                    <ul class="mitre-tactic-techniques">
+                        <li>Remote Services</li>
+                        <li>Internal Spearphishing</li>
+                    </ul>
+                </div>
+                <div class="mitre-tactic" onclick="this.classList.toggle('expanded')">
+                    <div class="mitre-tactic-name">Collection</div>
+                    <div class="mitre-tactic-id">TA0009</div>
+                    <ul class="mitre-tactic-techniques">
+                        <li>Data from Local System</li>
+                        <li>Screen Capture</li>
+                        <li>Audio Capture</li>
+                    </ul>
+                </div>
+                <div class="mitre-tactic" onclick="this.classList.toggle('expanded')">
+                    <div class="mitre-tactic-name">Command & Control</div>
+                    <div class="mitre-tactic-id">TA0011</div>
+                    <ul class="mitre-tactic-techniques">
+                        <li>Application Layer Protocol</li>
+                        <li>Encrypted Channel</li>
+                        <li>DNS</li>
+                    </ul>
+                </div>
+                <div class="mitre-tactic" onclick="this.classList.toggle('expanded')">
+                    <div class="mitre-tactic-name">Exfiltration</div>
+                    <div class="mitre-tactic-id">TA0010</div>
+                    <ul class="mitre-tactic-techniques">
+                        <li>Exfil Over C2 Channel</li>
+                        <li>Automated Exfiltration</li>
+                    </ul>
+                </div>
+                <div class="mitre-tactic" onclick="this.classList.toggle('expanded')">
+                    <div class="mitre-tactic-name">Impact</div>
+                    <div class="mitre-tactic-id">TA0040</div>
+                    <ul class="mitre-tactic-techniques">
+                        <li>Data Encrypted</li>
+                        <li>Account Access Removal</li>
+                        <li>Service Stop</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIGMA RULES -->
+        <section>
+            <div class="section-label">// DETECTION ENGINE</div>
+            <h2 class="heading-md">SIGMA Rule Library</h2>
+            <p class="body-md">Detection rules siap pakai. Klik untuk expand YAML, copy untuk pakai di SIEM kamu.</p>
+
+            <div id="sigma-rules-container">
+                <!-- Rule 1 -->
+                <div class="sigma-rule">
+                    <div class="sigma-rule-header">
+                        <div class="sigma-rule-name">win_brute_force.yml</div>
+                        <div class="sigma-rule-level high">HIGH</div>
+                    </div>
+                    <div class="sigma-rule-desc">Detect 5+ failed login dalam 5 menit dari IP yang sama</div>
+                    <div class="sigma-rule-yaml">title: Windows Brute Force
+id: 5d123456-1234-1234-1234-123456789abc
+status: stable
+level: high
+description: Detects multiple failed logins from same IP
+logsource:
+    product: windows
+    service: security
+detection:
+    selection:
+        EventID: 4625
+    condition: selection | count() by SourceIP > 5 in 5m
+falsepositives:
+    - VPN users
+    - Service accounts</div>
+                    <div class="sigma-rule-actions">
+                        <button class="copy-btn" onclick="copySigmaRule(this)"> COPY YAML</button>
+                        <button class="btn btn-ghost" onclick="this.parentElement.parentElement.classList.toggle('expanded')">👁 VIEW YAML</button>
+                    </div>
+                </div>
+
+                <!-- Rule 2 -->
+                <div class="sigma-rule">
+                    <div class="sigma-rule-header">
+                        <div class="sigma-rule-name">win_mimikatz.yml</div>
+                        <div class="sigma-rule-level critical">CRITICAL</div>
+                    </div>
+                    <div class="sigma-rule-desc">Detect credential dumping via Mimikatz patterns</div>
+                    <div class="sigma-rule-yaml">title: Mimikatz Detection
+id: a6234567-2345-2345-2345-23456789abcd
+status: stable
+level: critical
+description: Detects Mimikatz usage patterns
+logsource:
+    product: windows
+    service: sysmon
+detection:
+    selection:
+        EventID: 10
+        TargetImage|contains: lsass.exe
+        GrantedAccess: '0x1010'
+    condition: selection
+falsepositives:
+    - Legitimate admin tools</div>
+                    <div class="sigma-rule-actions">
+                        <button class="copy-btn" onclick="copySigmaRule(this)"> COPY YAML</button>
+                        <button class="btn btn-ghost" onclick="this.parentElement.parentElement.classList.toggle('expanded')">👁 VIEW YAML</button>
+                    </div>
+                </div>
+
+                <!-- Rule 3 -->
+                <div class="sigma-rule">
+                    <div class="sigma-rule-header">
+                        <div class="sigma-rule-name">win_susp_powershell.yml</div>
+                        <div class="sigma-rule-level high">HIGH</div>
+                    </div>
+                    <div class="sigma-rule-desc">Detect encoded PowerShell command execution</div>
+                    <div class="sigma-rule-yaml">title: Suspicious PowerShell
+id: b7234567-3456-3456-3456-3456789abcde
+status: stable
+level: high
+description: Detects encoded PowerShell commands
+logsource:
+    product: windows
+    service: powershell
+detection:
+    selection:
+        EventID: 4104
+        ScriptBlockText|contains:
+            - '-enc '
+            - '-encodedcommand '
+            - 'frombase64'
+    condition: selection</div>
+                    <div class="sigma-rule-actions">
+                        <button class="copy-btn" onclick="copySigmaRule(this)"> COPY YAML</button>
+                        <button class="btn btn-ghost" onclick="this.parentElement.parentElement.classList.toggle('expanded')">👁 VIEW YAML</button>
+                    </div>
+                </div>
+
+                <!-- Rule 4 -->
+                <div class="sigma-rule">
+                    <div class="sigma-rule-header">
+                        <div class="sigma-rule-name">dns_tunneling.yml</div>
+                        <div class="sigma-rule-level medium">MEDIUM</div>
+                    </div>
+                    <div class="sigma-rule-desc">Detect DNS tunneling via high entropy subdomains</div>
+                    <div class="sigma-rule-yaml">title: DNS Tunneling Detection
+id: c8234567-4567-4567-4567-456789abcdef
+status: stable
+level: medium
+description: Detects DNS tunneling patterns
+logsource:
+    category: dns
+detection:
+    selection:
+        query_length|gt: 50
+        subdomain_entropy|gt: 3.5
+    condition: selection
+falsepositives:
+    - CDN queries
+    - Long subdomain services</div>
+                    <div class="sigma-rule-actions">
+                        <button class="copy-btn" onclick="copySigmaRule(this)"> COPY YAML</button>
+                        <button class="btn btn-ghost" onclick="this.parentElement.parentElement.classList.toggle('expanded')">👁 VIEW YAML</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IOC LOOKUP -->
+        <section>
+            <div class="section-label">// THREAT INTELLIGENCE</div>
+            <h2 class="heading-md">IOC Quick Lookup</h2>
+            <p class="body-md">Paste IP, domain, atau hash untuk analisis cepat. (Simulasi - data demo)</p>
+
+            <div class="ioc-lookup">
+                <h3>❯ IOC Input</h3>
+                <div class="form-group">
+                    <label class="form-label">IP / Domain / Hash</label>
+                    <input type="text" id="ioc-input" placeholder="contoh: 185.220.101.47 atau evil.com">
+                </div>
+                <button class="btn btn-primary" onclick="lookupIOC()">[+] LOOKUP IOC</button>
+
+                <div class="ioc-result" id="ioc-result">
+                    <div class="ioc-result-row">
+                        <span class="ioc-result-label">Type:</span>
+                        <span class="ioc-result-value" id="ioc-type">-</span>
+                    </div>
+                    <div class="ioc-result-row">
+                        <span class="ioc-result-label">Threat Level:</span>
+                        <span class="ioc-result-value" id="ioc-level" style="color: var(--danger);">-</span>
+                    </div>
+                    <div class="ioc-result-row">
+                        <span class="ioc-result-label">First Seen:</span>
+                        <span class="ioc-result-value" id="ioc-first">-</span>
+                    </div>
+                    <div class="ioc-result-row">
+                        <span class="ioc-result-label">Last Seen:</span>
+                        <span class="ioc-result-value" id="ioc-last">-</span>
+                    </div>
+                    <div class="ioc-result-row">
+                        <span class="ioc-result-label">Tags:</span>
+                        <span class="ioc-result-value" id="ioc-tags">-</span>
+                    </div>
+                    <div class="ioc-result-row">
+                        <span class="ioc-result-label">Country:</span>
+                        <span class="ioc-result-value" id="ioc-country">-</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THREAT FEEDS -->
+        <section>
+            <div class="section-label">// INTELLIGENCE SOURCES</div>
+            <h2 class="heading-md">Threat Intel Feeds</h2>
+            <p class="body-md">Sumber intel terintegrasi. Klik untuk kunjungi sumber asli.</p>
+
+            <div class="capabilities-grid" style="margin-top: 24px;">
+                <a href="https://www.virustotal.com" target="_blank" class="threat-feed">
+                    <div class="threat-feed-name">VirusTotal</div>
+                    <div class="threat-feed-desc">File, URL, domain, IP analysis</div>
+                    <div class="threat-feed-meta">
+                        <span>↗ External</span>
+                        <span>Free tier available</span>
+                    </div>
+                </a>
+                <a href="https://www.abuseipdb.com" target="_blank" class="threat-feed">
+                    <div class="threat-feed-name">AbuseIPDB</div>
+                    <div class="threat-feed-desc">IP reputation & abuse reports</div>
+                    <div class="threat-feed-meta">
+                        <span>↗ External</span>
+                        <span>Community driven</span>
+                    </div>
+                </a>
+                <a href="https://urlhaus.abuse.ch" target="_blank" class="threat-feed">
+                    <div class="threat-feed-name">URLhaus</div>
+                    <div class="threat-feed-desc">Malware distribution URLs</div>
+                    <div class="threat-feed-meta">
+                        <span>↗ External</span>
+                        <span>Real-time updates</span>
+                    </div>
+                </a>
+                <a href="https://threatfox.abuse.ch" target="_blank" class="threat-feed">
+                    <div class="threat-feed-name">ThreatFox</div>
+                    <div class="threat-feed-desc">IOC sharing platform</div>
+                    <div class="threat-feed-meta">
+                        <span>↗ External</span>
+                        <span>API available</span>
+                    </div>
+                </a>
+                <a href="https://urlscan.io" target="_blank" class="threat-feed">
+                    <div class="threat-feed-name">URLScan</div>
+                    <div class="threat-feed-desc">Website scanning & analysis</div>
+                    <div class="threat-feed-meta">
+                        <span>↗ External</span>
+                        <span>Screenshot + DOM</span>
+                    </div>
+                </a>
+                <a href="https://otx.alienvault.com" target="_blank" class="threat-feed">
+                    <div class="threat-feed-name">AlienVault OTX</div>
+                    <div class="threat-feed-desc">Open threat exchange</div>
+                    <div class="threat-feed-meta">
+                        <span>↗ External</span>
+                        <span>Pulses & IOCs</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- REPORTING -->
+        <section>
+            <div class="section-label">// AUTOMATED REPORTING</div>
+            <h2 class="heading-md">Executive & Technical Reports</h2>
+            <p class="body-md">Template laporan profesional sesuai standar compliance.</p>
+
+            <div class="capabilities-grid" style="margin-top: 24px;">
+                <div class="capability-card">
+                    <div class="capability-tag">[NIST]</div>
+                    <div class="capability-title">NIST SP 800-61</div>
+                    <div class="capability-desc">Template incident report sesuai standar NIST untuk federal agencies.</div>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-tag">[ISO]</div>
+                    <div class="capability-title">ISO 27001</div>
+                    <div class="capability-desc">Format laporan untuk audit ISMS dan compliance certification.</div>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-tag">[EXEC]</div>
+                    <div class="capability-title">Executive Summary</div>
+                    <div class="capability-desc">Laporan non-teknis untuk C-level. Fokus pada business impact.</div>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-tag">[TECH]</div>
+                    <div class="capability-title">Technical Deep-Dive</div>
+                    <div class="capability-desc">Laporan detail untuk engineer. Include IOC, timeline, dan remediation steps.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RELATED PLAYBOOKS -->
+        <section>
+            <div class="section-label">// RELATED CONTENT</div>
+            <h2 class="heading-md">Related Playbooks</h2>
+            <p class="body-md">Playbook terkait untuk pendalaman materi.</p>
+
+            <div style="margin-top: 24px;">
+                <a href="wiki.html" class="related-playbook">
+                    <div class="related-playbook-icon">[+]</div>
+                    <div class="related-playbook-content">
+                        <div class="related-playbook-title">Menulis SIGMA Rule Pertama</div>
+                        <div class="related-playbook-meta">20 min read · wiki.html</div>
+                    </div>
+                </a>
+                <a href="wiki.html" class="related-playbook">
+                    <div class="related-playbook-icon">[+]</div>
+                    <div class="related-playbook-content">
+                        <div class="related-playbook-title">Analisa Phishing Email</div>
+                        <div class="related-playbook-meta">10 min read · wiki.html</div>
+                    </div>
+                </a>
+                <a href="wiki.html" class="related-playbook">
+                    <div class="related-playbook-icon">[+]</div>
+                    <div class="related-playbook-content">
+                        <div class="related-playbook-title">Basic Nmap Scan untuk Defender</div>
+                        <div class="related-playbook-meta">8 min read · wiki.html</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section style="text-align: center;">
+            <h2 class="heading-md">Ready to level up your SOC?</h2>
+            <p class="body-md" style="margin: 16px 0 24px;">Deploy CyberDeck Blue Team Edition dan tingkatkan MTTD hingga 80%.</p>
+            <div class="cta-buttons">
+                <a href="tools.html" class="btn btn-primary">▶ DEPLOY NOW</a>
+                <a href="wiki.html" class="btn btn-secondary">↗ READ PLAYBOOKS</a>
+            </div>
+        </section>
+    </main>
+
+    <cyberdeck-footer></cyberdeck-footer>
+
+    <!-- MODALS -->
+    <div class="toast-container" id="toast-container"></div>
+    <div class="command-palette-overlay" id="command-palette-overlay">
+        <div class="command-palette">
+            <input type="text" class="command-palette-input" id="command-palette-input" placeholder="❯ Type a command or search..." autocomplete="off">
+            <div class="command-palette-results" id="command-palette-results"></div>
+            <div class="command-palette-footer">
+                <span><kbd>↑↓</kbd> navigate</span>
+                <span><kbd>↵</kbd> select</span>
+                <span><kbd>esc</kbd> close</span>
+            </div>
+        </div>
+    </div>
+    <div class="shortcuts-modal-overlay" id="shortcuts-modal-overlay">
+        <div class="shortcuts-modal">
+            <div class="shortcuts-modal-header">
+                <div class="shortcuts-modal-title">[?] Keyboard Shortcuts</div>
+                <button class="shortcuts-modal-close" onclick="closeShortcutsModal()">[x] CLOSE</button>
+            </div>
+            <div class="shortcuts-modal-content">
+                <div class="shortcut-group">
+                    <div class="shortcut-group-title">Navigation</div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Open Command Palette</span>
+                        <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>K</kbd></div>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Go to Blue Team</span>
+                        <div class="shortcut-keys"><kbd>g</kbd><kbd>b</kbd></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shortcut-hints">
+        <span><kbd>Ctrl+K</kbd> Commands</span>
+        <span><kbd>?</kbd> Shortcuts</span>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Copy SIGMA Rule YAML
+        function copySigmaRule(btn) {
+            const rule = btn.closest('.sigma-rule');
+            const yaml = rule.querySelector('.sigma-rule-yaml').textContent;
+            navigator.clipboard.writeText(yaml).then(() => {
+                btn.textContent = '✓ COPIED!';
+                setTimeout(() => btn.textContent = ' COPY YAML', 2000);
+                if (typeof showToast === 'function') {
+                    showToast('SIGMA rule copied to clipboard', 'success');
+                }
+            });
+        }
+
+        // IOC Lookup (Simulasi)
+        function lookupIOC() {
+            const input = document.getElementById('ioc-input').value.trim();
+            const result = document.getElementById('ioc-result');
+            
+            if (!input) {
+                if (typeof showToast === 'function') {
+                    showToast('Please enter an IOC', 'warning');
+                }
+                return;
+            }
+
+            // Simulasi data berdasarkan tipe
+            let type, level, first, last, tags, country;
+            
+            if (input.match(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/)) {
+                type = 'IPv4 Address';
+                level = 'HIGH';
+                first = '2024-01-15';
+                last = '2026-06-05';
+                tags = 'brute-force, tor-exit, scanner';
+                country = 'Russia (RU)';
+            } else if (input.includes('.')) {
+                type = 'Domain';
+                level = 'CRITICAL';
+                first = '2025-11-20';
+                last = '2026-06-06';
+                tags = 'phishing, malware-c2';
+                country = 'Unknown';
+            } else {
+                type = 'Hash';
+                level = 'HIGH';
+                first = '2026-03-10';
+                last = '2026-06-01';
+                tags = 'trojan, ransomware';
+                country = 'N/A';
+            }
+
+            document.getElementById('ioc-type').textContent = type;
+            document.getElementById('ioc-level').textContent = level;
+            document.getElementById('ioc-first').textContent = first;
+            document.getElementById('ioc-last').textContent = last;
+            document.getElementById('ioc-tags').textContent = tags;
+            document.getElementById('ioc-country').textContent = country;
+            
+            result.classList.add('show');
+            
+            if (typeof showToast === 'function') {
+                showToast('IOC lookup complete', 'success');
+            }
+        }
+
+        if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(reg => console.log('SW registered'))
+    .catch(err => console.log('SW failed', err));
+}
+    </script>
+    
+</body>
+</html>

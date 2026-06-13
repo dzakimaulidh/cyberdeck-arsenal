@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki & Playbook | CyberDeck</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <script src="js/components.js" defer></script>
+</head>
+<body>
+    <cyberdeck-navbar></cyberdeck-navbar>
+
+
+    <main class="container">
+        <!-- HERO -->
+        <section style="padding-top: 64px;">
+            <div class="section-label">// KNOWLEDGE BASE · v2.4.1</div>
+            <h1 class="display-xl">Terminal Wiki & <span class="accent">OSINT</span></h1>
+            <p class="body-md" style="margin-top: 16px; max-width: 640px;">
+                Dokumentasi lengkap, playbook pertahanan, dan tutorial keamanan siber. Dari OSINT dasar sampai advanced threat hunting. Semua playbook bisa langsung dipraktekkan dengan tools di <a href="tools.html" style="color: var(--accent); text-decoration: none;">[tools]</a>.
+            </p>
+
+            <!-- QUICK NAV -->
+            <div class="wiki-quick-nav">
+                <a href="#playbooks" class="wiki-quick-nav-item">
+                    <i class="fa-solid fa-book"></i>
+                    <span>Playbooks</span>
+                </a>
+                <a href="#tools-ref" class="wiki-quick-nav-item">
+                    <i class="fa-solid fa-toolbox"></i>
+                    <span>Tools</span>
+                </a>
+                <a href="#quickstart" class="wiki-quick-nav-item">
+                    <i class="fa-solid fa-rocket"></i>
+                    <span>Quickstart</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section style="padding: 0;">
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-value">6</div>
+                    <div class="stat-label">Playbooks</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">83</div>
+                    <div class="stat-label">Min Read</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Tools Referenced</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="read-count">0</div>
+                    <div class="stat-label">Read by You</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLAYBOOKS -->
+        <section id="playbooks">
+            <div class="section-label">❯ PLAYBOOKS</div>
+            <h2 class="heading-md">Defensive Playbook Library</h2>
+            <p class="body-md">Klik pada judul untuk expand dokumentasi lengkap. Setiap playbook terhubung dengan tools yang relevan.</p>
+
+            <!-- SEARCH & FILTER -->
+            <div class="wiki-controls">
+                <div class="wiki-search">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" id="wiki-search-input" placeholder="Search playbooks...">
+                </div>
+                <div class="wiki-filters">
+                    <button class="wiki-filter-btn active" data-filter="all">All</button>
+                    <button class="wiki-filter-btn" data-filter="osint">OSINT</button>
+                    <button class="wiki-filter-btn" data-filter="phishing">Phishing</button>
+                    <button class="wiki-filter-btn" data-filter="network">Network</button>
+                    <button class="wiki-filter-btn" data-filter="detection">Detection</button>
+                </div>
+                <div class="wiki-actions">
+                    <button class="wiki-action-btn" onclick="expandAllPlaybooks()">
+                        <i class="fa-solid fa-expand"></i> Expand All
+                    </button>
+                    <button class="wiki-action-btn" onclick="collapseAllPlaybooks()">
+                        <i class="fa-solid fa-compress"></i> Collapse All
+                    </button>
+                </div>
+            </div>
+
+            <div class="playbook-list" id="playbook-list">
+                <!-- Playbook 1: OSINT -->
+                <div class="playbook-item" data-category="osint" data-title="Pengenalan OSINT">
+                    <div class="playbook-header" onclick="togglePlaybook(this)">
+                        <span class="playbook-toggle">[+]</span>
+                        <span class="playbook-title">Pengenalan OSINT</span>
+                        <div class="playbook-meta-group">
+                            <span class="playbook-tag">OSINT</span>
+                            <span class="playbook-meta">12 min read</span>
+                            <button class="playbook-read-btn" onclick="markAsRead(event, this)" title="Mark as read">
+                                <i class="fa-regular fa-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="playbook-content">
+                        <p><strong>OSINT</strong> (Open-Source Intelligence) adalah metodologi pengumpulan, analisis, dan pemanfaatan data yang tersedia secara publik untuk tujuan intelijen dan keamanan siber.</p>
+                        <p>Dalam konteks Blue Team, teknik ini sering digunakan untuk mencari tahu seberapa banyak informasi sensitif perusahaan yang bocor di internet — seperti kredensial karyawan di Pastebin atau repositori GitHub yang tidak dikunci.</p>
+                        <blockquote>"Informasi yang berserakan di internet adalah amunisi terbaik bagi peretas. Tugas kita adalah menemukannya sebelum mereka."</blockquote>
+                        
+                        <h3>Tools OSINT Populer:</h3>
+                        <div class="code-block">
+                            <button class="code-copy-btn" onclick="copyCodeBlock(this)">
+                                <i class="fa-regular fa-copy"></i> Copy
+                            </button>
+                            <code>theHarvester — Email & subdomain enumeration
+Maltego — Visual link analysis
+Shodan — IoT & server search engine
+Hunter.io — Email finder
+HaveIBeenPwned — Breach database check
+Google Dorking — Advanced search queries</code>
+                        </div>
+
+                        <h3><i class="fa-solid fa-link"></i> Tools Terkait di CyberDeck:</h3>
+                        <div class="related-tools">
+                            <a href="tools.html?id=url" class="related-tool-link">
+                                <i class="fa-solid fa-link"></i> URL Encoder
+                                <span>Encode query untuk Google dorking</span>
+                            </a>
+                            <a href="tools.html?id=hex" class="related-tool-link">
+                                <i class="fa-solid fa-link"></i> Hex Encoder
+                                <span>Decode payload hex</span>
+                            </a>
+                            <a href="tools.html?id=regex" class="related-tool-link">
+                                <i class="fa-solid fa-link"></i> Regex Tester
+                                <span>Pattern matching untuk data extraction</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Playbook 2: Kali Linux -->
+                <div class="playbook-item" data-category="setup" data-title="Setup Kali Linux untuk Blue Team">
+                    <div class="playbook-header" onclick="togglePlaybook(this)">
+                        <span class="playbook-toggle">[+]</span>
+                        <span class="playbook-title">Setup Kali Linux untuk Blue Team</span>
+                        <div class="playbook-meta-group">
+                            <span class="playbook-tag">Setup</span>
+                            <span class="playbook-meta">15 min read</span>
+                            <button class="playbook-read-btn" onclick="markAsRead(event, this)" title="Mark as read">
+                                <i class="fa-regular fa-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="playbook-content">
+                        <p>Kali Linux biasanya diasosiasikan dengan offensive security, tapi bisa dikonfigurasi untuk defensive operations dengan memilih tool yang tepat.</p>
+                        
+                        <h3>Tool Defensive yang Perlu Diinstall:</h3>
+                        <div class="code-block">
+                            <button class="code-copy-btn" onclick="copyCodeBlock(this)">
+                                <i class="fa-regular fa-copy"></i> Copy
+                            </button>
+                            <code>wireshark — Network protocol analyzer
+volatility3 — Memory forensics
+log2timeline/plaso — Timeline generation
+yara — Malware pattern matching
+sigma — Generic signature format for SIEM</code>
+                        </div>
+
+                        <h3>Command Install:</h3>
+                        <div class="code-block">
+                            <button class="code-copy-btn" onclick="copyCodeBlock(this)">
+                                <i class="fa-regular fa-copy"></i> Copy
+                            </button>
+                            <code>sudo apt update
+sudo apt install wireshark volatility3 yara python3-pip</code>
+                        </div>
+
+                        <div class="warning-box">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <div>
+                                <strong>Best Practice:</strong> Selalu jalankan di VM terisolasi. Jangan install di host utama.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Playbook 3: Phishing -->
+                <div class="playbook-item" data-category="phishing" data-title="Analisa Phishing Email">
+                    <div class="playbook-header" onclick="togglePlaybook(this)">
+                        <span class="playbook-toggle">[+]</span>
+                        <span class="playbook-title">Analisa Phishing Email</span>
+                        <div class="playbook-meta-group">
+                            <span class="playbook-tag">Phishing</span>
+                            <span class="playbook-meta">10 min read</span>
+                            <button class="playbook-read-btn" onclick="markAsRead(event, this)" title="Mark as read">
+                                <i class="fa-regular fa-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="playbook-content">
+                        <p>Phishing tetap menjadi vektor serangan #1. Kemampuan menganalisa email mencurigakan adalah skill fundamental Blue Team.</p>
+                        
+                        <h3>Header yang Harus Dicek:</h3>
+                        <div class="code-block">
+                            <button class="code-copy-btn" onclick="copyCodeBlock(this)">
+                                <i class="fa-regular fa-copy"></i> Copy
+                            </button>
+                            <code>Return-Path — Alamat bounce, sering berbeda dari From
+Received-SPF — Validasi sender domain
+Authentication-Results — DKIM, DMARC status
+X-Originating-IP — IP asli pengirim</code>
+                        </div>
+
+                        <h3>Red Flags:</h3>
+                        <div class="warning-box">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <div>
+                                <ul>
+                                    <li>SPF fail atau softfail</li>
+                                    <li>DKIM signature invalid</li>
+                                    <li>DMARC policy none + fail</li>
+                                    <li>Mismatch antara display name dan email address</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3><i class="fa-solid fa-link"></i> Tools Terkait di CyberDeck:</h3>
+                        <div class="related-tools">
+                            <a href="tools.html?id=base64" class="related-tool-link">
+                                <i class="fa-solid fa-link"></i> Base64 Decoder
+                                <span>Decode attachment encoded</span>
+                            </a>
+                            <a href="tools.html?id=url" class="related-tool-link">
+                                <i class="fa-solid fa-link"></i> URL Decoder
+                                <span>Decode suspicious link</span>
+                            </a>
+                            <a href="tools.html?id=hash" class="related-tool-link">
+                                <i class="fa-solid fa-link"></i> Hash Generator
+                                <span>Hash attachment untuk VirusTotal</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Playbook 4: Nmap -->
+                <div class="playbook-item" data-category="network" data-title="Basic Nmap Scan untuk Defender">
+                    <div class="playbook-header" onclick="togglePlaybook(this)">
+                        <span class="playbook-toggle">[+]</span>
+                        <span class="playbook-title">Basic Nmap Scan untuk Defender</span>
+                        <div class="playbook-meta-group">
+                            <span class="playbook-tag">Network</span>
+                            <span class="playbook-meta">8 min read</span>
+                            <button class="playbook-read-btn" onclick="markAsRead(event, this)" title="Mark as read">
+                                <i class="fa-regular fa-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="playbook-content">
+                        <p>Nmap bukan hanya tool offensive. Defender bisa pakai untuk audit aset internal dan verifikasi konfigurasi firewall.</p>
+                        
+                        <h3>Safe Scan Patterns:</h3>
+                        <div class="code-block">
+                            <button class="code-copy-btn" onclick="copyCodeBlock(this)">
+                                <i class="fa-regular fa-copy"></i> Copy
+                            </button>
+                            <code># Stealth SYN scan, semua port, timing lambat
+nmap -sS -p- -T2 target
+
+# Service version + OS detection
+nmap -sV -O target
+
+# Vulnerability scan (hati-hati di production!)
+nmap --script vuln target</code>
+                        </div>
+
+                        <div class="warning-box">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <div>
+                                <strong>Peringatan:</strong> Jangan scan production network tanpa izin. Bisa trigger IDS/IPS dan dianggap sebagai serangan.
+                            </div>
+                        </div>
+
+                        <h3><i class="fa-solid fa-link"></i> Tools Terkait di CyberDeck:</h3>
+                        <div class="related-tools">
+                            <a href="tools.html?id=subnet" class="related-tool-link">
+                                <i class="fa-solid fa-link"></i> Subnet Calculator
+                                <span>Hitung range target</span>
+                            </a>
+                            <a href="tools.html?id=json" class="related-tool-link">
+                                <i class="fa-solid fa-link"></i> JSON Formatter
+                                <span>Format output nmap XML→JSON</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Playbook 5: SIGMA -->
+                <div class="playbook-item" data-category="detection" data-title="Menulis SIGMA Rule Pertama">
+                    <div class="playbook-header" onclick="togglePlaybook(this)">
+                        <span class="playbook-toggle">[+]</span>
+                        <span class="playbook-title">Menulis SIGMA Rule Pertama</span>
+                        <div class="playbook-meta-group">
+                            <span class="playbook-tag">Detection</span>
+                            <span class="playbook-meta">20 min read</span>
+                            <button class="playbook-read-btn" onclick="markAsRead(event, this)" title="Mark as read">
+                                <i class="fa-regular fa-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="playbook-content">
+                        <p>SIGMA adalah format generic untuk detection rules yang bisa dikonversi ke berbagai SIEM (Splunk, Elastic, QRadar, dll).</p>
+                        
+                        <h3>Struktur Dasar SIGMA Rule:</h3>
+                        <div class="code-block">
+                            <button class="code-copy-btn" onclick="copyCodeBlock(this)">
+                                <i class="fa-regular fa-copy"></i> Copy
+                            </button>
+                            <code>title: Nama rule
+logsource:
+    category: Kategori log
+    product: Produk log
+detection:
+    selection:
+        EventID: ID event
+    condition: selection
+level: critical / high / medium / low / informational</code>
+                        </div>
+
+                        <h3>Contoh Rule — Detect Brute Force:</h3>
+                        <div class="code-block">
+                            <button class="code-copy-btn" onclick="copyCodeBlock(this)">
+                                <i class="fa-regular fa-copy"></i> Copy
+                            </button>
+                            <code>title: Windows Brute Force
+id: 5d123456-1234-1234-1234-123456789abc
+status: stable
+level: high
+description: Detects multiple failed logins from same IP
+logsource:
+    product: windows
+    service: security
+detection:
+    selection:
+        EventID: 4625
+    condition: selection | count() by SourceIP > 5 in 5m
+falsepositives:
+    - VPN users
+    - Service accounts</code>
+                        </div>
+
+                        <h3><i class="fa-solid fa-link"></i> Tools Terkait di CyberDeck:</h3>
+                        <div class="related-tools">
+                            <a href="tools.html?id=regex" class="related-tool-link">
+                                <i class="fa-solid fa-link"></i> Regex Tester
+                                <span>Test pattern untuk detection rule</span>
+                            </a>
+                            <a href="tools.html?id=json" class="related-tool-link">
+                                <i class="fa-solid fa-link"></i> JSON Formatter
+                                <span>Format YAML/SIGMA config</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Playbook 6: GitHub Dorking -->
+                <div class="playbook-item" data-category="osint" data-title="GitHub Dorking untuk Data Leak">
+                    <div class="playbook-header" onclick="togglePlaybook(this)">
+                        <span class="playbook-toggle">[+]</span>
+                        <span class="playbook-title">GitHub Dorking untuk Data Leak</span>
+                        <div class="playbook-meta-group">
+                            <span class="playbook-tag">OSINT</span>
+                            <span class="playbook-meta">18 min read</span>
+                            <button class="playbook-read-btn" onclick="markAsRead(event, this)" title="Mark as read">
+                                <i class="fa-regular fa-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="playbook-content">
+                        <p>Banyak developer tidak sengaja commit credential, API key, atau config file ke repository publik. GitHub dorking adalah teknik mencari data sensitif ini.</p>
+                        
+                        <h3>Query Pencarian Efektif:</h3>
+                        <div class="code-block">
+                            <button class="code-copy-btn" onclick="copyCodeBlock(this)">
+                                <i class="fa-regular fa-copy"></i> Copy
+                            </button>
+                            <code>"AWS_ACCESS_KEY" language:python
+"password" extension:env
+"api_key" extension:json
+"BEGIN RSA PRIVATE KEY"</code>
+                        </div>
+
+                        <h3>Tools Bantu:</h3>
+                        <p>TruffleHog, GitLeaks, GitHub Advanced Security secret scanning.</p>
+
+                        <h3>Remediation:</h3>
+                        <p>Jika menemukan credential perusahaan, segera revoke dan rotasi. Laporkan ke tim security.</p>
+
+                        <h3><i class="fa-solid fa-link"></i> Tools Terkait di CyberDeck:</h3>
+                        <div class="related-tools">
+                            <a href="tools.html?id=url" class="related-tool-link">
+                                <i class="fa-solid fa-link"></i> URL Encoder
+                                <span>Encode query GitHub dorking</span>
+                            </a>
+                            <a href="tools.html?id=hash" class="related-tool-link">
+                                <i class="fa-solid fa-link"></i> Hash Generator
+                                <span>Hash leaked credential untuk IOC</span>
+                            </a>
+                            <a href="tools.html?id=base64" class="related-tool-link">
+                                <i class="fa-solid fa-link"></i> Base64 Decoder
+                                <span>Decode secret yang di-encode</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NO RESULTS MESSAGE -->
+            <div class="wiki-no-results" id="wiki-no-results" style="display: none;">
+                <i class="fa-solid fa-search"></i>
+                <p>No playbooks found matching your search.</p>
+            </div>
+        </section>
+
+        <!-- QUICKSTART -->
+        <section id="quickstart">
+            <div class="section-label">[+] QUICKSTART</div>
+            <h2 class="heading-md">Zero-Install Execution</h2>
+            <p class="body-md" style="margin-bottom: 24px;">
+                Seluruh arsenal berjalan langsung di dalam browser (client-side). Tidak ada dependencies yang perlu diunduh, tidak perlu <code style="background: var(--surface-dark-elevated); padding: 2px 6px; border-radius: 3px; color: var(--accent);">curl</code>, dan tidak ada environment yang perlu dikonfigurasi.
+            </p>
+
+            <div class="quickstart-steps">
+                <div class="quickstart-step">
+                    <div class="quickstart-step-num"># 1</div>
+                    <div class="quickstart-step-content">
+                        <strong style="color: var(--ink);">Pilih tool dari sidebar atau tekan Ctrl+K</strong>
+                        <p style="color: var(--body); font-size: 14px; margin-top: 4px;">Akses Base64 Encoder, Hash Generator, Regex Tester, atau 9 tools lainnya.</p>
+                    </div>
+                </div>
+
+                <div class="quickstart-step">
+                    <div class="quickstart-step-num"># 2</div>
+                    <div class="quickstart-step-content">
+                        <strong style="color: var(--ink);">Input data target dan eksekusi</strong>
+                        <p style="color: var(--body); font-size: 14px; margin-top: 4px;">Output diproses secara lokal. Zero server-side logging. Aman untuk data sensitif.</p>
+                    </div>
+                </div>
+
+                <div class="quickstart-step">
+                    <div class="quickstart-step-num"># 3</div>
+                    <div class="quickstart-step-content">
+                        <strong style="color: var(--ink);">Copy hasil atau bookmark sebagai favorite</strong>
+                        <p style="color: var(--body); font-size: 14px; margin-top: 4px;">Klik bintang ★ untuk favorite, otomatis tersimpan di browser.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quickstart-features">
+                <div class="quickstart-feature">
+                    <span style="color: var(--success);">[x]</span>
+                    <strong style="color: var(--ink);">Client-Side Only</strong>
+                    <span>— Data rahasia tidak pernah meninggalkan browser Anda.</span>
+                </div>
+                <div class="quickstart-feature">
+                    <span style="color: var(--success);">[x]</span>
+                    <strong style="color: var(--ink);">Instant Load</strong>
+                    <span>— Render statis tanpa loading state yang berat.</span>
+                </div>
+                <div class="quickstart-feature">
+                    <span style="color: var(--success);">[x]</span>
+                    <strong style="color: var(--ink);">Favorites System</strong>
+                    <span>— Bookmark tools favorit dengan localStorage.</span>
+                </div>
+                <div class="quickstart-feature">
+                    <span style="color: var(--success);">[x]</span>
+                    <strong style="color: var(--ink);">Keyboard First</strong>
+                    <span>— Ctrl+K untuk command palette, ↑↓ untuk history.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVAILABLE TOOLS -->
+        <section id="tools-ref">
+            <div class="section-label">[+] TOOLS REFERENCE</div>
+            <h2 class="heading-md">All Available Tools</h2>
+            <p class="body-md">12 tools yang bisa langsung dipakai. Klik untuk membuka tool.</p>
+
+            <div class="tool-list" style="margin-top: 24px;">
+                <div class="tool-row">
+                    <span class="tool-marker">[+]</span>
+                    <div>
+                        <span class="tool-name">base64</span>
+                        <span class="tool-desc">Base64 encoder/decoder</span>
+                    </div>
+                    <a href="tools.html?id=base64" class="tool-action">→ open</a>
+                </div>
+                <div class="tool-row">
+                    <span class="tool-marker">[+]</span>
+                    <div>
+                        <span class="tool-name">hash</span>
+                        <span class="tool-desc">SHA-256, SHA-1, MD5 generator</span>
+                    </div>
+                    <a href="tools.html?id=hash" class="tool-action">→ open</a>
+                </div>
+                <div class="tool-row">
+                    <span class="tool-marker">[+]</span>
+                    <div>
+                        <span class="tool-name">jwt</span>
+                        <span class="tool-desc">JWT decoder & inspector</span>
+                    </div>
+                    <a href="tools.html?id=jwt" class="tool-action">→ open</a>
+                </div>
+                <div class="tool-row">
+                    <span class="tool-marker">[+]</span>
+                    <div>
+                        <span class="tool-name">url</span>
+                        <span class="tool-desc">URL encoder/decoder</span>
+                    </div>
+                    <a href="tools.html?id=url" class="tool-action">→ open</a>
+                </div>
+                <div class="tool-row">
+                    <span class="tool-marker">[+]</span>
+                    <div>
+                        <span class="tool-name">hex</span>
+                        <span class="tool-desc">Hex encoder/decoder</span>
+                    </div>
+                    <a href="tools.html?id=hex" class="tool-action">→ open</a>
+                </div>
+                <div class="tool-row">
+                    <span class="tool-marker">[+]</span>
+                    <div>
+                        <span class="tool-name">html-entity</span>
+                        <span class="tool-desc">HTML entity encoder</span>
+                    </div>
+                    <a href="tools.html?id=html-entity" class="tool-action">→ open</a>
+                </div>
+                <div class="tool-row">
+                    <span class="tool-marker">[+]</span>
+                    <div>
+                        <span class="tool-name">password</span>
+                        <span class="tool-desc">Secure password generator</span>
+                    </div>
+                    <a href="tools.html?id=password" class="tool-action">→ open</a>
+                </div>
+                <div class="tool-row">
+                    <span class="tool-marker">[+]</span>
+                    <div>
+                        <span class="tool-name">subnet</span>
+                        <span class="tool-desc">Subnet calculator (CIDR)</span>
+                    </div>
+                    <a href="tools.html?id=subnet" class="tool-action">→ open</a>
+                </div>
+                <div class="tool-row">
+                    <span class="tool-marker">[+]</span>
+                    <div>
+                        <span class="tool-name">regex</span>
+                        <span class="tool-desc">Regex tester</span>
+                    </div>
+                    <a href="tools.html?id=regex" class="tool-action">→ open</a>
+                </div>
+                <div class="tool-row">
+                    <span class="tool-marker">[+]</span>
+                    <div>
+                        <span class="tool-name">json</span>
+                        <span class="tool-desc">JSON formatter & validator</span>
+                    </div>
+                    <a href="tools.html?id=json" class="tool-action">→ open</a>
+                </div>
+                <div class="tool-row">
+                    <span class="tool-marker">[+]</span>
+                    <div>
+                        <span class="tool-name">timestamp</span>
+                        <span class="tool-desc">Unix timestamp converter</span>
+                    </div>
+                    <a href="tools.html?id=timestamp" class="tool-action">→ open</a>
+                </div>
+                <div class="tool-row">
+                    <span class="tool-marker">[+]</span>
+                    <div>
+                        <span class="tool-name">uuid</span>
+                        <span class="tool-desc">UUID v4 generator</span>
+                    </div>
+                    <a href="tools.html?id=uuid" class="tool-action">→ open</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section style="text-align: center;">
+            <h2 class="heading-md">Ready to apply these playbooks?</h2>
+            <p class="body-md" style="margin: 16px 0 24px;">Semua tools sudah siap di browser kamu. Zero install, zero server.</p>
+            <div class="cta-buttons">
+                <a href="tools.html" class="btn btn-primary">▶ OPEN TOOLS</a>
+                <a href="blueteam.html" class="btn btn-secondary">↗ BLUE TEAM OPS</a>
+            </div>
+        </section>
+    </main>
+
+    <cyberdeck-footer></cyberdeck-footer>
+
+    <!-- MODALS -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <div class="command-palette-overlay" id="command-palette-overlay">
+        <div class="command-palette">
+            <input type="text" class="command-palette-input" id="command-palette-input" placeholder="❯ Type a command or search..." autocomplete="off">
+            <div class="command-palette-results" id="command-palette-results"></div>
+            <div class="command-palette-footer">
+                <span><kbd>↑↓</kbd> navigate</span>
+                <span><kbd>↵</kbd> select</span>
+                <span><kbd>esc</kbd> close</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="shortcuts-modal-overlay" id="shortcuts-modal-overlay">
+        <div class="shortcuts-modal">
+            <div class="shortcuts-modal-header">
+                <div class="shortcuts-modal-title">[?] Keyboard Shortcuts</div>
+                <button class="shortcuts-modal-close" onclick="closeShortcutsModal()">[x] CLOSE</button>
+            </div>
+            <div class="shortcuts-modal-content">
+                <div class="shortcut-group">
+                    <div class="shortcut-group-title">Navigation</div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Open Command Palette</span>
+                        <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>K</kbd></div>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Show Shortcuts</span>
+                        <div class="shortcut-keys"><kbd>?</kbd></div>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Go to Home</span>
+                        <div class="shortcut-keys"><kbd>g</kbd><kbd>h</kbd></div>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Go to Tools</span>
+                        <div class="shortcut-keys"><kbd>g</kbd><kbd>t</kbd></div>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Go to Wiki</span>
+                        <div class="shortcut-keys"><kbd>g</kbd><kbd>w</kbd></div>
+                    </div>
+                </div>
+                <div class="shortcut-group">
+                    <div class="shortcut-group-title">General</div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Close Modal</span>
+                        <div class="shortcut-keys"><kbd>Esc</kbd></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="shortcut-hints">
+        <span><kbd>Ctrl+K</kbd> Commands</span>
+        <span><kbd>?</kbd> Shortcuts</span>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/wiki.js"></script>
+    <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(reg => console.log('SW registered'))
+    .catch(err => console.log('SW failed', err));
+}
+</script>
+</body>
+</html>

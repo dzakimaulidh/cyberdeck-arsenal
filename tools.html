@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools — CyberDeck Arsenal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <script src="js/components.js" defer></script>
+</head>
+<body>
+    <cyberdeck-navbar></cyberdeck-navbar>
+
+    <main class="container-wide">
+        <!-- HERO SECTION -->
+        <section style="padding-top: 48px; border-bottom: 1px solid var(--hairline);">
+            <div class="section-label">// ACTIVE ARSENAL · v2.4.1</div>
+            <h1 class="display-xl" id="page-title">Tool <span class="accent">Dashboard</span></h1>
+            <p class="body-md" style="margin-top: 8px;">Zero-install. Client-side. 100% Functional.</p>
+
+            <!-- STATS BAR -->
+            <div class="tools-stats-bar">
+                <div class="tools-stat">
+                    <i class="fa-solid fa-toolbox"></i>
+                    <div>
+                        <div class="tools-stat-value" id="total-tools-count">12</div>
+                        <div class="tools-stat-label">Total Tools</div>
+                    </div>
+                </div>
+                <div class="tools-stat">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <div>
+                        <div class="tools-stat-value" id="total-categories-count">6</div>
+                        <div class="tools-stat-label">Categories</div>
+                    </div>
+                </div>
+                <div class="tools-stat">
+                    <i class="fa-solid fa-star"></i>
+                    <div>
+                        <div class="tools-stat-value" id="total-favorites-count">0</div>
+                        <div class="tools-stat-label">Favorites</div>
+                    </div>
+                </div>
+                <div class="tools-stat">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div>
+                        <div class="tools-stat-value">100%</div>
+                        <div class="tools-stat-label">Client-Side</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOL LAYOUT -->
+        <div class="tool-layout">
+            <!-- SIDEBAR -->
+            <aside class="tool-sidebar" id="tool-sidebar">
+                
+                <!-- SEARCH BOX -->
+                <div class="tool-sidebar-search">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" id="tool-search-input" placeholder="Search tools...">
+                </div>
+                <!-- Categories will be rendered here by JS -->
+            </aside>
+
+            <!-- MAIN AREA -->
+            <div class="tool-main" id="tool-render-area">
+                <!-- Will be rendered by JS -->
+            </div>
+        </div>
+    </main>
+
+    <cyberdeck-footer></cyberdeck-footer>
+
+    <!-- MODALS -->
+    <div class="toast-container" id="toast-container"></div>
+    <div class="command-palette-overlay" id="command-palette-overlay">
+        <div class="command-palette">
+            <input type="text" class="command-palette-input" id="command-palette-input" placeholder="❯ Search tools, commands, or navigate..." autocomplete="off">
+            <div class="command-palette-results" id="command-palette-results"></div>
+            <div class="command-palette-footer">
+                <span><kbd>↑↓</kbd> nav</span>
+                <span><kbd>↵</kbd> select</span>
+                <span><kbd>esc</kbd> close</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="shortcuts-modal-overlay" id="shortcuts-modal-overlay">
+        <div class="shortcuts-modal">
+            <div class="shortcuts-modal-header">
+                <div class="shortcuts-modal-title">[?] Keyboard Shortcuts</div>
+                <button class="shortcuts-modal-close" onclick="closeShortcutsModal()">[x] CLOSE</button>
+            </div>
+            <div class="shortcuts-modal-content">
+                <div class="shortcut-group">
+                    <div class="shortcut-group-title">Navigation</div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Open Command Palette</span>
+                        <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>K</kbd></div>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Go to Home</span>
+                        <div class="shortcut-keys"><kbd>g</kbd><kbd>h</kbd></div>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Go to Tools</span>
+                        <div class="shortcut-keys"><kbd>g</kbd><kbd>t</kbd></div>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Go to Wiki</span>
+                        <div class="shortcut-keys"><kbd>g</kbd><kbd>w</kbd></div>
+                    </div>
+                </div>
+                <div class="shortcut-group">
+                    <div class="shortcut-group-title">General</div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Focus Tool Search</span>
+                        <div class="shortcut-keys"><kbd>/</kbd></div>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-label">Close Modal</span>
+                        <div class="shortcut-keys"><kbd>Esc</kbd></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="shortcut-hints">
+        <span><kbd>Ctrl+K</kbd> Commands</span>
+        <span><kbd>?</kbd> Shortcuts</span>
+        <span><kbd>/</kbd> Search</span>
+    </div>
+    <script src="js/tools-engine.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(reg => console.log('SW registered'))
+    .catch(err => console.log('SW failed', err));
+}
+</script>
+</body>
+</html>
