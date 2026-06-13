@@ -10,7 +10,7 @@
 
 **Dzaki Maulid Hidayat**  
 - [LinkedIn](https://www.linkedin.com/in/dzaki-maulid-hidayat-a05172220/)  
-- [GitHub]([https://github.com/whiteblackgotham](https://github.com/dzakimaulidh/)
+- [GitHub](https://github.com/dzakimaulidh/)
 
 ## Features
 
