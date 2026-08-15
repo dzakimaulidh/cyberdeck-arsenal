@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main # Branch GitHub tempat sistem menyimpan artikel
+
+media_folder: "images/uploads" # Tempat nyimpen gambar yang di-upload
+public_folder: "/images/uploads"
+
+collections:
+  - name: "wiki"
+    label: "Wiki & Playbook"
+    folder: "content/wiki" # Otomatis bikin file .md di folder ini
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Author", name: "author", widget: "string", default: "Tim Redaksi"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Read Time", name: "read_time", widget: "string", hint: "Contoh: 12 min read"}
+      - {label: "Body", name: "body", widget: "markdown"}
